@@ -5,10 +5,12 @@ on:
 
 Jobs:
   builds:
+  #create VM with ubuntu OS
   runs-on: Ubuntu-16.04
   name: My Build
-  stops:
-    -name: Check out code
-    uses: action/checkout@v2
-    -name: Setup go
-    uses: action/setup-go@v2
+  
+  steps:
+  #first step to say hello
+    -name: greeting steps
+    runs: 
+      echo "Hello there"
