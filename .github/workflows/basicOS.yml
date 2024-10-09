@@ -57,4 +57,5 @@ jobs:
           ls
           cd hiddenfolder
           ls
+          cat hiddenText.txt
         
