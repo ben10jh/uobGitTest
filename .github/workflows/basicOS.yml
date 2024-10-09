@@ -47,11 +47,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ben10jh/UOBHidden
+          path: hiddenfolder
           token: $(( secrets.SECRETUOB ))
 
 
       #this prints out the hidden files
       - name: print out hidden things
         run: |
+          ls
+          cd hiddenfolder
           ls
         
