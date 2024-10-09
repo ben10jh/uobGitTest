@@ -48,7 +48,7 @@ jobs:
         with:
           repository: ben10jh/UOBHidden
           path: hiddenfolder
-          token: $(( secrets.SECRETUOB ))
+          token: ${{ secrets.SECRETUOB }}
 
 
       #this prints out the hidden files
