@@ -1,0 +1,47 @@
+name: Deploy Webpage
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the main branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Setup Node.js (optional if your website uses JS tools)
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    # Step 3: Install dependencies (if any)
+    # This step can be skipped if your webpage doesn't require any dependencies
+    - name: Install dependencies
+      run: |
+        npm install  # Example command if you use npm for dependencies
+
+    # Step 4: Run tests (if applicable)
+    # This step is for testing your webpage before deployment
+    # You can skip this if you have no tests to run
+    - name: Run tests
+      run: |
+        echo "No tests available"  # Replace this with actual test commands if needed
+
+    # Step 5: Build the webpage
+    # Skip this if you do not need to build (for static HTML files)
+    - name: Build webpage
+      run: |
+        echo "No build step required"  # Adjust this if using a build tool like Jekyll, Hugo, etc.
+
+    # Step 6: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub's default secret token
+        publish_dir: ./  # The directory to deploy (here, it's the root directory containing index.html)
