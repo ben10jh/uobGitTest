@@ -14,32 +14,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Setup Node.js (optional if your website uses JS tools)
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-
-    # Step 3: Install dependencies (if any)
-    # This step can be skipped if your webpage doesn't require any dependencies
-    - name: Install dependencies
-      run: |
-        npm install  # Example command if you use npm for dependencies
-
-    # Step 4: Run tests (if applicable)
-    # This step is for testing your webpage before deployment
-    # You can skip this if you have no tests to run
+    # Step 2: Run tests (optional, can be skipped if not needed)
     - name: Run tests
       run: |
         echo "No tests available"  # Replace this with actual test commands if needed
 
-    # Step 5: Build the webpage
-    # Skip this if you do not need to build (for static HTML files)
-    - name: Build webpage
-      run: |
-        echo "No build step required"  # Adjust this if using a build tool like Jekyll, Hugo, etc.
-
-    # Step 6: Deploy to GitHub Pages
+    # Step 3: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
