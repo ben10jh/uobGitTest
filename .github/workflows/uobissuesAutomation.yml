@@ -57,4 +57,11 @@ jobs:
           cd hiddenfolder
           ls
           cat hiddenText.txt
+
+      - name: Publish Text Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+          with:
+            files: |
+              *.xml
         
