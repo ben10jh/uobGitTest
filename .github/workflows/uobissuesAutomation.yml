@@ -1,11 +1,10 @@
-name: Myworkflow file
+name: My Second workflow
 on:
   pull_request:
-  push:
     branches: [main]
 
 jobs:
-  builds:
+  builds2:
   #create VM with ubuntu OS
     runs-on: Ubuntu-20.04
     name: My Build
